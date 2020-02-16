@@ -20,4 +20,10 @@ public class LoginPage {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.id("user-name"))).isDisplayed();
     }
+
+    public void login(String userName, String password) {
+        driver.findElement(By.id("user-name")).sendKeys(userName);
+        driver.findElement(By.id("password")).sendKeys(password);
+        driver.findElement(By.className("btn_action")).submit();
+    }
 }

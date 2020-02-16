@@ -16,6 +16,18 @@ public class AcceptanceTestDrivenAutomation {
         assertTrue(loginPage.isLoaded());
     }
 
+    @Test
+    public void shouldLogin()
+    {
+        WebDriver driver = getDriver();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.open();
+        assertTrue(loginPage.isLoaded());
+
+        loginPage.login("standard_user", "secret_sauce");
+        assertTrue(new ProductsPage(driver).isLoaded());
+    }
+
     private WebDriver getDriver() {
         //Telling the system where to find chromedriver. On Windows you also need to add .exe
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
