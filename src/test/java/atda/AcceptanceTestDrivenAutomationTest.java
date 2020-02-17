@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class AcceptanceTestDrivenAutomation {
+public class AcceptanceTestDrivenAutomationTest {
     WebDriver driver;
     @BeforeEach
     public void setup()
