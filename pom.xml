@@ -6,6 +6,22 @@
     <properties>
         <maven.compiler.release>11</maven.compiler.release>
     </properties>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M4</version>
+                    <configuration>
+                        <parallel>classes</parallel>
+                        <threadCount>10</threadCount>
+                        <redirectTestOutputToFile>false</redirectTestOutputToFile>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <groupId>org.ultimateqa</groupId>
     <artifactId>selenium.java</artifactId>

@@ -1,5 +1,7 @@
 package atda;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -7,10 +9,20 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AcceptanceTestDrivenAutomation {
+    WebDriver driver;
+    @BeforeEach
+    public void setup()
+    {
+        driver = getDriver();
+    }
+    @AfterEach
+    public void cleanup()
+    {
+        driver.quit();
+    }
     @Test
     public void shouldOpen()
     {
-        WebDriver driver = getDriver();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         assertTrue(loginPage.isLoaded());
@@ -19,7 +31,6 @@ public class AcceptanceTestDrivenAutomation {
     @Test
     public void shouldLogin()
     {
-        WebDriver driver = getDriver();
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
         assertTrue(loginPage.isLoaded());

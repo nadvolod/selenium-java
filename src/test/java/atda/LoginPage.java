@@ -5,11 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
-    private final WebDriver driver;
+public class LoginPage extends BasePage {
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void open() {
@@ -17,7 +16,6 @@ public class LoginPage {
     }
 
     public boolean isLoaded() {
-        WebDriverWait wait = new WebDriverWait(driver, 10);
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.id("user-name"))).isDisplayed();
     }
 
