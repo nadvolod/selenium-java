@@ -25,11 +25,6 @@ public class AcceptanceTestDrivenAutomationTest {
     {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         assertTrue(loginPage.isLoaded());
     }
 
@@ -38,11 +33,6 @@ public class AcceptanceTestDrivenAutomationTest {
     {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         assertTrue(loginPage.isLoaded());
 
         loginPage.login("standard_user", "secret_sauce");
