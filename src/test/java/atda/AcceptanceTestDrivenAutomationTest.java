@@ -1,21 +1,21 @@
 package atda;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
 
 public class AcceptanceTestDrivenAutomationTest {
     WebDriver driver;
-    @BeforeEach
+    @Before
     public void setup()
     {
         driver = getDriver();
     }
-    @AfterEach
+    @After
     public void cleanup()
     {
         driver.quit();

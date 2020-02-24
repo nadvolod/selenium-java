@@ -3,8 +3,9 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-
+    <groupId>org.ultimateqa</groupId>
+    <artifactId>selenium.java</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <build>
         <pluginManagement>
@@ -16,6 +17,7 @@
                     <configuration>
                         <parallel>all</parallel>
                         <threadCount>10</threadCount>
+                        <parallel>all</parallel>
                     </configuration>
                 </plugin>
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
@@ -31,10 +33,6 @@
             </plugins>
         </pluginManagement>
     </build>
-
-    <groupId>org.ultimateqa</groupId>
-    <artifactId>selenium.java</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -43,17 +41,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.6.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.6.0</version>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 </project>
