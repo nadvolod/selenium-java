@@ -12,4 +12,8 @@ public class ShoppingCartComponent extends BasePage {
         String numOfItemsInCart = driver.findElement(By.xpath("//*[@class='fa-layers-counter shopping_cart_badge']")).getText();
         return  Integer.parseInt(numOfItemsInCart) == numberOfItems;
     }
+
+    public void open() {
+        driver.findElement(By.id("shopping_cart_container")).click();
+    }
 }
