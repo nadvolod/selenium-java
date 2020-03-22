@@ -1,25 +1,12 @@
 package atda;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import pages.LoginPage;
+import pages.ProductsPage;
 
 import static org.junit.Assert.assertTrue;
 
-public class AcceptanceTestDrivenAutomationTest {
-    WebDriver driver;
-    @Before
-    public void setup()
-    {
-        driver = getDriver();
-    }
-    @After
-    public void cleanup()
-    {
-        driver.quit();
-    }
+public class AcceptanceTestDrivenAutomationTest extends BaseTest {
     @Test
     public void shouldOpen()
     {
@@ -37,11 +24,5 @@ public class AcceptanceTestDrivenAutomationTest {
 
         loginPage.login("standard_user", "secret_sauce");
         assertTrue(new ProductsPage(driver).isLoaded());
-    }
-
-    private WebDriver getDriver() {
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-        return new ChromeDriver();
     }
 }
