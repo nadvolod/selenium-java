@@ -1,5 +1,7 @@
 package locating.elements;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,14 +13,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertTrue;
 
 public class LocatingElementsTest {
-    
-    @Test
-    public void elementsQuiz1()
-    {
+    WebDriver driver;
+
+    @Before
+    public void setUp() {
         //Telling the system where to find chromedriver. On Windows you also need to add .exe
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         //1. Instantiate the driver
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
+    }
+
+    @After
+    public void tearDown() {
+        //7. quit the driver
+        driver.quit();
+    }
+
+    @Test
+    public void elementsQuiz1()
+    {
         //2. navigate to the URL
         driver.get("https://www.saucedemo.com/");
         //3. Find element //4. check the state
@@ -27,16 +40,11 @@ public class LocatingElementsTest {
                 ExpectedConditions.presenceOfElementLocated(By.id("user-name")));
         //5. take action //6. record the result
         assertTrue(element.isDisplayed());
-        //7. quit the driver
-        driver.quit();
+
     }
     @Test
     public void typesOfLocators()
     {
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-        //1. Instantiate the driver
-        WebDriver driver = new ChromeDriver();
         //2. navigate to the URL
         driver.get("https://www.saucedemo.com/");
         //3. Find element
@@ -55,20 +63,12 @@ public class LocatingElementsTest {
         //Xpath
         // //*[@id="user-name"]
         driver.findElement(By.xpath("//*[@id=\"user-name\"]"));
-        driver.quit();
 
-
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
-        //1. Instantiate the driver
-        driver = new ChromeDriver();
         //2. navigate to the URL
         driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
         //Link text
         driver.findElement(By.linkText("Click me using this link text!"));
         //Partial link text
         driver.findElement(By.partialLinkText("link text!"));
-        //7. quit the driver
-        driver.quit();
     }
 }
