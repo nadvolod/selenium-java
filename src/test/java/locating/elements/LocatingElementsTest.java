@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertTrue;
 
 public class LocatingElementsTest {
+    
     @Test
     public void elementsQuiz1()
     {
@@ -26,6 +27,47 @@ public class LocatingElementsTest {
                 ExpectedConditions.presenceOfElementLocated(By.id("user-name")));
         //5. take action //6. record the result
         assertTrue(element.isDisplayed());
+        //7. quit the driver
+        driver.quit();
+    }
+    @Test
+    public void typesOfLocators()
+    {
+        //Telling the system where to find chromedriver. On Windows you also need to add .exe
+        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+        //1. Instantiate the driver
+        WebDriver driver = new ChromeDriver();
+        //2. navigate to the URL
+        driver.get("https://www.saucedemo.com/");
+        //3. Find element
+        WebElement element;
+        //ID
+        element = driver.findElement(By.id("user-name"));
+        //Name
+        //driver.findElement(By.name("name of locator"));
+        //Class name
+        driver.findElement(By.className("form_input"));
+        //Tag name
+        driver.findElement(By.tagName("input"));
+        //Css selector
+        //#user-name
+        driver.findElement(By.cssSelector("#user-name"));
+        //Xpath
+        // //*[@id="user-name"]
+        driver.findElement(By.xpath("//*[@id=\"user-name\"]"));
+        driver.quit();
+
+
+        //Telling the system where to find chromedriver. On Windows you also need to add .exe
+        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+        //1. Instantiate the driver
+        driver = new ChromeDriver();
+        //2. navigate to the URL
+        driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
+        //Link text
+        driver.findElement(By.linkText("Click me using this link text!"));
+        //Partial link text
+        driver.findElement(By.partialLinkText("link text!"));
         //7. quit the driver
         driver.quit();
     }
