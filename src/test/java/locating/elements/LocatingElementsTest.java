@@ -71,4 +71,47 @@ public class LocatingElementsTest {
         //Partial link text
         driver.findElement(By.partialLinkText("link text!"));
     }
+
+    @Test
+    public void locatorExam()
+    {
+        //2. navigate to the URL
+        driver.get("https://www.saucedemo.com/");
+
+        //css ID
+
+        //Input element with class form_input
+
+        //Direct child
+
+        //Using attributes. Input with id='user-name'
+
+        driver.findElement(By.cssSelector("#user-name")).sendKeys("standard_user");
+        driver.findElement(By.cssSelector("[data-test='password']")).sendKeys("secret_sauce");
+        driver.findElement(By.cssSelector(".btn_action")).click();
+
+        driver.findElement(By.xpath("//*[@class='btn_primary btn_inventory']")).click();
+
+
+        driver.findElement(By.id("user-name"));
+        //Name
+        //driver.findElement(By.name("name of locator"));
+        //Class name
+        driver.findElement(By.className("form_input"));
+        //Tag name
+        driver.findElement(By.tagName("input"));
+        //Css selector
+        //#user-name
+        driver.findElement(By.cssSelector("#user-name"));
+        //Xpath
+        // //*[@id="user-name"]
+        driver.findElement(By.xpath("//*[@id=\"user-name\"]"));
+
+        //2. navigate to the URL
+        driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
+        //Link text
+        driver.findElement(By.linkText("Click me using this link text!"));
+        //Partial link text
+        driver.findElement(By.partialLinkText("link text!"));
+    }
 }
