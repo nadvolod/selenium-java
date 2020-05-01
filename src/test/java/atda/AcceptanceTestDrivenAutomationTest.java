@@ -7,8 +7,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -81,8 +79,8 @@ public class AcceptanceTestDrivenAutomationTest {
         MutableCapabilities sauceOpts = new MutableCapabilities();
         sauceOpts.setCapability("username", sauceUsername);
         sauceOpts.setCapability("accessKey", sauceAccessKey);
-        sauceOpts.setCapability("build", "best-practices");
-        sauceOpts.setCapability("tags", "['best-practices', 'best-practices']");
+        sauceOpts.setCapability("build", "ATDA");
+        sauceOpts.setCapability("tags", "ATDA");
 
         MutableCapabilities browserOptions = new MutableCapabilities();
         browserOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
