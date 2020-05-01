@@ -45,5 +45,11 @@
             <version>3.141.59</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.saucelabs/sauce_bindings -->
+        <dependency>
+            <groupId>com.saucelabs</groupId>
+            <artifactId>sauce_bindings</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 </project>
