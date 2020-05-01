@@ -24,10 +24,14 @@ public class AcceptanceTestDrivenAutomationTest {
     public WebDriver driver;
 
     @Parameterized.Parameters
-    public static Collection<Object[]> data() {
+    public static Collection<Object[]> crossBrowserData() {
         return Arrays.asList(new Object[][] {
-                { "Chrome", "MacOS 10.12", "latest" },
-                { "Safari", "MacOS 10.15", "latest" }
+                { "Chrome", "MacOS 10.14", "latest" },
+                { "Chrome", "MacOS 10.15", "latest" },
+                { "Chrome", "MacOS 10.14", "latest-1" },
+                { "Chrome", "MacOS 10.15", "latest-1" },
+                { "Safari", "MacOS 10.14", "latest" },
+                { "Safari", "MacOS 10.15", "latest" },
         });
     }
 
