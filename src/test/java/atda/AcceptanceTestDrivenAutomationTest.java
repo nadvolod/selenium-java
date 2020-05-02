@@ -40,8 +40,11 @@ public class AcceptanceTestDrivenAutomationTest {
     }
 
     private WebDriver getDriver() {
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+        //Telling the system where to find chromedriver on mac
+        //System.setProperty("webdriver.chrome.driver", "resources/mac/chromedriver");
+
+        //The path of chromedriver for windows
+        System.setProperty("webdriver.chrome.driver", "resources/windows/chromedriver.exe");
         return new ChromeDriver();
     }
 }
