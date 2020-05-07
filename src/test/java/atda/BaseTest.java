@@ -56,7 +56,6 @@ public class BaseTest {
         sauceOpts.setCapability("username", sauceUsername);
         sauceOpts.setCapability("accessKey", sauceAccessKey);
         sauceOpts.setCapability("build", "ATDA");
-        sauceOpts.setCapability("tags", "ATDA");
 
         MutableCapabilities browserOptions = new MutableCapabilities();
         browserOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
