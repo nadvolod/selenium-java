@@ -3,11 +3,11 @@ package advanced.tips;
 import atda.LoginPage;
 import atda.ProductsPage;
 import org.apache.commons.lang3.SystemUtils;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import static org.junit.Assert.assertTrue;
 
@@ -19,12 +19,12 @@ public class TestNG {
     protected WebDriver getWebDriverInstance() {
         return driver.get();
     }
-    @Before
+    @BeforeMethod
     public void setup()
     {
         driver.set(getDriver());
     }
-    @After
+    @AfterMethod
     public void cleanup()
     {
         getWebDriverInstance().quit();
