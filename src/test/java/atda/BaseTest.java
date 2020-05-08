@@ -1,7 +1,8 @@
 package atda;
 
-import org.junit.After;
 import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.TestName;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,17 @@ import java.util.Collection;
 
 public class BaseTest {
     public WebDriver driver;
+
+    @Rule
+    public SauceTestWatcher resultReportingTestWatcher = new SauceTestWatcher();
+
+    @Rule
+    public TestName testName = new TestName() {
+        public String getMethodName() {
+            return String.format("%s", super.getMethodName());
+        }
+    };
+
     @Parameterized.Parameters
     public static Collection<Object[]> crossBrowserData() {
         return Arrays.asList(new Object[][] {
@@ -39,14 +51,7 @@ public class BaseTest {
     @Before
     public void setup() throws MalformedURLException {
         createDriver();
-    }
-    @After
-    public void teardown()
-    {
-        if(driver != null)
-        {
-            driver.quit();
-        }
+        resultReportingTestWatcher.setDriver(driver);
     }
     private void createDriver() throws MalformedURLException {
         String sauceUsername = System.getenv("SAUCE_USERNAME");
@@ -55,6 +60,7 @@ public class BaseTest {
         MutableCapabilities sauceOpts = new MutableCapabilities();
         sauceOpts.setCapability("username", sauceUsername);
         sauceOpts.setCapability("accessKey", sauceAccessKey);
+        sauceOpts.setCapability("name", testName.getMethodName());
         sauceOpts.setCapability("build", "ATDA");
 
         MutableCapabilities browserOptions = new MutableCapabilities();
