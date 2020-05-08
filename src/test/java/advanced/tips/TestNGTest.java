@@ -3,15 +3,15 @@ package advanced.tips;
 import atda.LoginPage;
 import atda.ProductsPage;
 import org.apache.commons.lang3.SystemUtils;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import static org.junit.Assert.assertTrue;
 
-public class TestNG {
+public class TestNGTest {
     private ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     /**
      * @return the {@link WebDriver} for the current thread
