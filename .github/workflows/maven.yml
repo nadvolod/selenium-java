@@ -5,7 +5,8 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: cross_browser_sauce_bindings
+    branches:
+      - cross_browser_sauce_bindings
 
 jobs:
   build:
