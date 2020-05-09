@@ -9,6 +9,7 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
 public class AcceptanceTestDrivenAutomationTest extends BaseTest {
+
     @Test
     public void shouldLogin() {
         LoginPage loginPage = new LoginPage(driver);
