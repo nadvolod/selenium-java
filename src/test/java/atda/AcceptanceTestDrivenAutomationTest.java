@@ -19,7 +19,6 @@ public class AcceptanceTestDrivenAutomationTest extends BaseTest {
         loginPage.login("standard_user", "secret_sauce");
         assertTrue("Products page should open when we login", new ProductsPage(driver).isLoaded());
     }
-
     @Test
     public void shouldAddOneItemToCart() {
         ProductsPage productsPage = new ProductsPage(driver);
