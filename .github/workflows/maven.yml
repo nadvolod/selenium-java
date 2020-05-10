@@ -20,4 +20,4 @@ jobs:
       with:
         java-version: 11
     - name: Test with Maven
-      run: mvn test -X
+      run: mvn test -X -Dtest=AcceptanceTestDrivenAutomationTest
