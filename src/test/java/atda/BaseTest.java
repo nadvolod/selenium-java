@@ -62,6 +62,8 @@ public class BaseTest {
         sauceOpts.setCapability("accessKey", sauceAccessKey);
         sauceOpts.setCapability("name", testName.getMethodName());
         sauceOpts.setCapability("build", "ATDA");
+        sauceOpts.setCapability("commandTimeout", "30");
+
 
         MutableCapabilities browserOptions = new MutableCapabilities();
         browserOptions.setCapability(CapabilityType.PLATFORM_NAME, platform);
