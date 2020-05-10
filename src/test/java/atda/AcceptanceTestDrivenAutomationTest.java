@@ -33,5 +33,13 @@ public class AcceptanceTestDrivenAutomationTest extends BaseTest {
         productsPage.addItemToCart();
         productsPage.addItemToCart();
         assertEquals("2", productsPage.getCountOfItemsInCart());
+
+      private WebDriver getDriver() {
+        //Telling the system where to find chromedriver on mac
+        //System.setProperty("webdriver.chrome.driver", "resources/mac/chromedriver");
+
+        //The path of chromedriver for windows
+        System.setProperty("webdriver.chrome.driver", "resources/windows/chromedriver.exe");
+        return new ChromeDriver();
     }
 }
