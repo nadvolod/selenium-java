@@ -27,38 +27,64 @@ public class JUnitTest {
     @Test
     public void shouldLogin()
     {
+        runTest();
+    }
+
+    public void runTest() {
+        System.out.println("||||||||||||||||||||||||||||||||");
+        System.out.println("Thread id:" + Thread.currentThread().getId());
+        System.out.println("||||||||||||||||||||||||||||||||");
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
 
         loginPage.login("standard_user", "secret_sauce");
         assertTrue(new ProductsPage(driver).isLoaded());
     }
+
     @Test
     public void shouldLogin2()
     {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
-
-        loginPage.login("standard_user", "secret_sauce");
-        assertTrue(new ProductsPage(driver).isLoaded());
+        runTest();
     }
     @Test
     public void shouldLogin3()
     {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
-
-        loginPage.login("standard_user", "secret_sauce");
-        assertTrue(new ProductsPage(driver).isLoaded());
+        runTest();
     }
     @Test
     public void shouldLogin4()
     {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
-
-        loginPage.login("standard_user", "secret_sauce");
-        assertTrue(new ProductsPage(driver).isLoaded());
+        runTest();
+    }
+    @Test
+    public void shouldLogin5()
+    {
+        runTest();
+    }
+    @Test
+    public void shouldLogin6()
+    {
+        runTest();
+    }
+    @Test
+    public void shouldLogin7()
+    {
+        runTest();
+    }
+    @Test
+    public void shouldLogin8()
+    {
+        runTest();
+    }
+    @Test
+    public void shouldLogin9()
+    {
+        runTest();
+    }
+    @Test
+    public void shouldLogin10()
+    {
+        runTest();
     }
 
     private WebDriver getDriver() {
