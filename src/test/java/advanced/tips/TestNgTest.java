@@ -14,8 +14,10 @@ import static org.testng.Assert.assertTrue;
 
 
 public class TestNgTest {
-    WebDriver driver;
+    //We need to create a ThreadLocal object to be accessed by a specific thread
+    private ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
     static List<Long> threads = new ArrayList<Long>();
+
     @BeforeClass
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
@@ -33,12 +35,14 @@ public class TestNgTest {
     @BeforeMethod
     public void setup()
     {
-        driver = getDriver();
+        //we set the Thread Local object to an instance of ChromeDriver
+        //now this threadLocalDriver will use this exact thread on this ChromeDriver
+        threadLocalDriver.set(new ChromeDriver());
     }
     @AfterMethod
     public void cleanup()
     {
-        driver.quit();
+        threadLocalDriver.get().quit();
     }
 
     @Test
@@ -53,11 +57,14 @@ public class TestNgTest {
         System.out.println("||||||||||||||||||||||||||||||||");
         System.out.println("Thread id:" + Thread.currentThread().getId());
         System.out.println("||||||||||||||||||||||||||||||||");
-        LoginPage loginPage = new LoginPage(driver);
+
+        //Any access of our driver object must now occur through a .get()
+        //to access a specific thread
+        LoginPage loginPage = new LoginPage(threadLocalDriver.get());
         loginPage.open();
 
         loginPage.login("standard_user", "secret_sauce");
-        assertTrue(new ProductsPage(driver).isLoaded());
+        assertTrue(new ProductsPage(threadLocalDriver.get()).isLoaded());
     }
 
     @Test
@@ -104,9 +111,5 @@ public class TestNgTest {
     public void shouldLogin10()
     {
         runTest();
-    }
-
-    private WebDriver getDriver() {
-        return new ChromeDriver();
     }
 }
