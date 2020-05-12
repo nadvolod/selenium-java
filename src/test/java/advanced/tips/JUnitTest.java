@@ -2,17 +2,33 @@ package advanced.tips;
 
 import atda.LoginPage;
 import atda.ProductsPage;
-import org.apache.commons.lang3.SystemUtils;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
 public class JUnitTest {
     WebDriver driver;
+    static List<Long> threads = new ArrayList<Long>();
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+
+    @AfterClass
+    public static void afterClass() throws Exception {
+        System.out.println("ALL THREADS ||||||||||||||||||||||||||||||||");
+        for(Long thread : threads) {
+            System.out.println(thread);
+        }
+        System.out.println("||||||||||||||||||||||||||||||||");
+    }
+
     @Before
     public void setup()
     {
@@ -31,6 +47,8 @@ public class JUnitTest {
     }
 
     public void runTest() {
+        var threadId = Thread.currentThread().getId();
+        threads.add(threadId);
         System.out.println("||||||||||||||||||||||||||||||||");
         System.out.println("Thread id:" + Thread.currentThread().getId());
         System.out.println("||||||||||||||||||||||||||||||||");
@@ -88,14 +106,6 @@ public class JUnitTest {
     }
 
     private WebDriver getDriver() {
-        if(SystemUtils.IS_OS_WINDOWS)
-        {
-            //The path of chromedriver for windows
-            System.setProperty("webdriver.chrome.driver", "resources/windows/chromedriver.exe");
-        }
-        //Telling the system where to find chromedriver on mac
-        System.setProperty("webdriver.chrome.driver", "resources/mac/chromedriver");
-
         return new ChromeDriver();
     }
 }
