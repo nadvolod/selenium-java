@@ -3,16 +3,17 @@ package advanced.tips;
 import atda.LoginPage;
 import atda.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.testng.Assert.assertTrue;
 
-public class JUnitTest {
+
+public class TestNgTest {
     WebDriver driver;
     static List<Long> threads = new ArrayList<Long>();
     @BeforeClass
@@ -29,12 +30,12 @@ public class JUnitTest {
         System.out.println("||||||||||||||||||||||||||||||||");
     }
 
-    @Before
+    @BeforeMethod
     public void setup()
     {
         driver = getDriver();
     }
-    @After
+    @AfterMethod
     public void cleanup()
     {
         driver.quit();
