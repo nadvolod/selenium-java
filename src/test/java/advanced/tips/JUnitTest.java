@@ -3,24 +3,24 @@ package advanced.tips;
 import atda.LoginPage;
 import atda.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.*;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JUnitTest {
     WebDriver driver;
     static List<Long> threads = new ArrayList<Long>();
-    @BeforeClass
+    @BeforeAll
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
     }
 
-    @AfterClass
+    @AfterAll
     public static void afterClass() throws Exception {
         System.out.println("ALL THREADS ||||||||||||||||||||||||||||||||");
         for(Long thread : threads) {
@@ -29,12 +29,12 @@ public class JUnitTest {
         System.out.println("||||||||||||||||||||||||||||||||");
     }
 
-    @Before
+    @BeforeEach
     public void setup()
     {
         driver = getDriver();
     }
-    @After
+    @AfterEach
     public void cleanup()
     {
         driver.quit();
