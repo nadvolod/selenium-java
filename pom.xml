@@ -36,6 +36,13 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://github.com/bonigarcia/webdrivermanager/ -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.0.0</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
