@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 
 public class JavaBasics {
     @Test
@@ -60,5 +62,26 @@ public class JavaBasics {
         int myInt = 50;
         ten = ten + myInt;
         System.out.println("ten = " + ten);
+    }
+
+    @Test
+    public void operators() {
+        // Assignment operator
+        int result = 10 - 5;
+        // Plus operator
+        result = 10 + 0;
+        assertEquals(10, result);
+        // Minus operator
+        result = 50 - 40;
+        assertEquals(10, result);
+        // Multiplication
+        result = 2 * 5;
+        assertEquals(10, result);
+        // Division
+        result = 20 / 2;
+        assertEquals(10, result);
+        // Remainder or modulus operator
+        result = 4 % 3;
+        assertEquals(1, result);
     }
 }
