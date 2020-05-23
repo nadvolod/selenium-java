@@ -44,4 +44,21 @@ public class JavaBasics {
         weightInKg = weightInPounds * CONVERSION_RATIO;
         System.out.println("weightInKg = " + weightInKg);
     }
+
+    @Test
+    public void strings() {
+        String myName = "Nikolay";
+        System.out.println("myName = " + myName);
+        System.out.println("myName = " + myName +
+                " and I love test " +
+                "automation");
+        String number1 = "100";
+        String number2 = "200";
+        System.out.println("number1 + number2 = " + number1 + number2);
+
+        String ten = "10";
+        int myInt = 50;
+        ten = ten + myInt;
+        System.out.println("ten = " + ten);
+    }
 }
