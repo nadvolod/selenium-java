@@ -30,4 +30,49 @@ public class CodeOrganization {
         }
         driver.quit();
     }
+
+    @Test
+    public void ifStatements() {
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://www.saucedemo.com/inventory.html");
+        String inventoryElementLocator = "inventory_item";
+        int countOfItems = driver.
+                findElements(By.className(inventoryElementLocator)).
+                size();
+        if (countOfItems == 6) {
+            System.out.println("inventoryElementLocator = " +
+                    inventoryElementLocator);
+            String newLocator = inventoryElementLocator;
+            System.out.println("inside of if block");
+        } else if (countOfItems == 5) {
+            System.out.println("Inside of else if");
+        } else {
+            System.out.println("inside of else block");
+        }
+        driver.quit();
+    }
+    @Test
+    public void exerciseIf() {
+        WebDriver driver = new ChromeDriver();
+        driver.navigate().to("https://www.saucedemo.com/inventory.html");
+        String inventoryElementLocator = "inventory_item";
+        int countOfItems = 50;
+        if(countOfItems == 10)
+        {
+            System.out.println("countOfItems = " + countOfItems);
+        }
+        else if (countOfItems == 9){
+            System.out.println("countOfItems = " + countOfItems);   
+        }
+        else {
+            System.out.println("countOfItems = " + countOfItems);
+        }
+        // if countOfItems is 10, print "countOfItems = 10"
+        // else if countOfItems is 9, print "countOfItems = 9"
+        // else print "countOfItems = {the other count of items}"
+        
+
+        driver.quit();
+    }
+
 }
