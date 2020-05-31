@@ -1,3 +1,7 @@
+package com.ultimateqa;
+
+import com.ultimateqa.pages.LoginPage;
+import com.ultimateqa.pages.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;

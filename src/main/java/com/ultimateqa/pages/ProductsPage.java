@@ -1,3 +1,5 @@
+package com.ultimateqa.pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -5,17 +7,19 @@ import org.openqa.selenium.WebElement;
 public class ProductsPage {
     private WebDriver webDriver;
     private WebDriver driver;
+    private By backpackLocator = By.id("backapack");
+    private By addToCartButtonLocator = By.className("btn_primary");
 
     public ProductsPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public WebElement getBackpack() {
-        return driver.findElement(By.id("backapack"));
+    private WebElement getBackpack() {
+        return driver.findElement(backpackLocator);
     }
 
-    public WebElement getAddToCartButton() {
-        return driver.findElement(By.className("btn_primary"));
+    private WebElement getAddToCartButton() {
+        return driver.findElement(addToCartButtonLocator);
     }
 
     public void addToCart(){
