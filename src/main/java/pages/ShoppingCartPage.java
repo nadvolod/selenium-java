@@ -1,9 +1,6 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
@@ -25,5 +22,16 @@ public class ShoppingCartPage extends BasePage {
             return 0;
         }
         return cartItems.size();
+    }
+
+    public void open() {
+        driver.navigate().to("https://www.saucedemo.com/cart.html");
+    }
+
+    public void injectItemIntoCart() {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.sessionStorage.setItem('session-username', 'standard-user')");
+        jsExecutor.executeScript("window.sessionStorage.setItem('cart-contents', '[1]')");
+        driver.navigate().refresh();
     }
 }

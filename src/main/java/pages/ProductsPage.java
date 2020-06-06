@@ -18,4 +18,8 @@ public class ProductsPage extends BasePage{
         return wait.until(
                 ExpectedConditions.presenceOfElementLocated(By.id("inventory_filter_container"))).isDisplayed();
     }
+
+    public void open() {
+        driver.navigate().to("https://www.saucedemo.com/inventory.html");
+    }
 }

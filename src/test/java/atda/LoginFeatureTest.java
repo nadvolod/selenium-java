@@ -6,7 +6,7 @@ import pages.ProductsPage;
 
 import static org.junit.Assert.assertTrue;
 
-public class AcceptanceTestDrivenAutomationTest extends BaseTest {
+public class LoginFeatureTest extends BaseTest {
     @Test
     public void shouldOpen()
     {
