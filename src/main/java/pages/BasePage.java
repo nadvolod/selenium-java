@@ -12,4 +12,8 @@ public class BasePage {
         this.driver = driver;
         wait = new WebDriverWait(driver, 5);
     }
+
+    public void open(String urlPart){
+        driver.navigate().to("https://www.saucedemo.com/" + urlPart);
+    }
 }

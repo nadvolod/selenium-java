@@ -10,10 +10,6 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
-    public void open() {
-        driver.get("http://www.saucedemo.com");
-    }
-
     public boolean isLoaded() {
         return wait.until(ExpectedConditions.presenceOfElementLocated(By.id("user-name"))).isDisplayed();
     }
@@ -22,5 +18,9 @@ public class LoginPage extends BasePage {
         driver.findElement(By.id("user-name")).sendKeys(userName);
         driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.className("btn_action")).submit();
+    }
+
+    public void open() {
+        open("");
     }
 }

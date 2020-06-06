@@ -25,7 +25,7 @@ public class ShoppingCartPage extends BasePage {
     }
 
     public void open() {
-        driver.navigate().to("https://www.saucedemo.com/cart.html");
+        open("cart.html");
     }
 
     public void injectItemIntoCart() {

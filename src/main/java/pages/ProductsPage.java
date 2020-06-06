@@ -20,6 +20,6 @@ public class ProductsPage extends BasePage{
     }
 
     public void open() {
-        driver.navigate().to("https://www.saucedemo.com/inventory.html");
+        open("inventory.html");
     }
 }
