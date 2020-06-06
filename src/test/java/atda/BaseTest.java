@@ -1,12 +1,20 @@
 package atda;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseTest {
     WebDriver driver;
+
+    @BeforeClass
+    public static void beforeClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+
     @Before
     public void setup()
     {
@@ -18,8 +26,6 @@ public class BaseTest {
         driver.quit();
     }
     private WebDriver getDriver() {
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         return new ChromeDriver();
     }
 }
