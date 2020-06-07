@@ -1,10 +1,8 @@
 package atda;
 
 import com.saucelabs.saucebindings.SauceSession;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 
 public class BaseTest {
