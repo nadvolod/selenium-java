@@ -9,18 +9,21 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
+    public By getUserNameLocator()
+    {
+        return By.id("user-name");
+    }
     public void open() {
-        driver.get("http://www.saucedemo.com");
+        driver.get("https://www.saucedemo.com/");
     }
 
     public boolean isLoaded() {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(By.id("user-name"))).isDisplayed();
+        return isElementDisplayed(getUserNameLocator());
     }
 
-    public void login(String userName, String password) {
-        driver.findElement(By.id("user-name")).sendKeys(userName);
+    public void login(String username, String password) {
+        driver.findElement(getUserNameLocator()).sendKeys(username);
         driver.findElement(By.id("password")).sendKeys(password);
-        driver.findElement(By.className("btn_action")).submit();
+        driver.findElement(By.className("btn_action")).click();
     }
 }

@@ -1,50 +1,37 @@
 package atda;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class AcceptanceTestDrivenAutomationTest {
-    WebDriver driver;
-    @Before
-    public void setup()
-    {
-        driver = getDriver();
-    }
-    @After
-    public void cleanup()
-    {
-        driver.quit();
-    }
-    @Test
-    public void shouldOpen()
-    {
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.open();
-        assertTrue(loginPage.isLoaded());
-    }
+@RunWith(Parameterized.class)
+public class AcceptanceTestDrivenAutomationTest extends BaseTest {
 
     @Test
-    public void shouldLogin()
-    {
+    public void shouldLogin() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
-        assertTrue(loginPage.isLoaded());
-
+        //I used to do this, now I learned it's not necessary
+        //assertTrue("Login page should load successfully", loginPage.isLoaded());
         loginPage.login("standard_user", "secret_sauce");
-        assertTrue(new ProductsPage(driver).isLoaded());
+        assertTrue("Products page should open when we login", new ProductsPage(driver).isLoaded());
     }
-
-    private WebDriver getDriver() {
-        //Telling the system where to find chromedriver on mac
-        //System.setProperty("webdriver.chrome.driver", "resources/mac/chromedriver");
-
-        //The path of chromedriver for windows
-        System.setProperty("webdriver.chrome.driver", "resources/windows/chromedriver.exe");
-        return new ChromeDriver();
+    @Test
+    public void shouldAddOneItemToCart() {
+        ProductsPage productsPage = new ProductsPage(driver);
+        productsPage.open();
+        productsPage.addItemToCart();
+        assertEquals("1", productsPage.getCountOfItemsInCart());
+    }
+    @Test
+    public void shouldAddTwoItemsToCart() {
+        ProductsPage productsPage = new ProductsPage(driver);
+        productsPage.open();
+        productsPage.addItemToCart();
+        productsPage.addItemToCart();
+        assertEquals("2", productsPage.getCountOfItemsInCart());
     }
 }
