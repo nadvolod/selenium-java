@@ -42,7 +42,8 @@ public class WebDriverMethodsExam {
         Actions actions = new Actions(driver);
         actions.moveToElement(element).click().perform();
         assertTrue(
-                driver.findElement(By.xpath("//*[@for='password1']")).getAttribute("style").contains("color: orange;"));
+                driver.findElement(By.xpath("//*[@for='password1']")).
+                        getAttribute("style").contains("color: orange;"));
     }
 
     /*
@@ -54,7 +55,7 @@ public class WebDriverMethodsExam {
     @Test
     public void cookies() {
         driver.get("https://example.cypress.io/commands/cookies");
-        element = driver.findElement(By.cssSelector("#getCookie .set-a-cookie"));
+        element = driver.findElement(By.cssSelector(".set-a-cookie"));
         element.click();
 
         var cookie = driver.manage().getCookieNamed("token");
