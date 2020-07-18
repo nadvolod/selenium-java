@@ -92,4 +92,23 @@ public class WebDriverMethodsExam {
         javascriptExecutor.executeScript("window.scrollTo(0, -document.body.scrollHeight)");
         Thread.sleep(1000);
     }
+
+    @Test
+    public void howToHighlightElement() throws InterruptedException {
+        driver.navigate().to("https://ultimateqa.com/complicated-page/");
+        element = driver.findElement(By.id("Skills_Improved"));
+        // Get the style of the element and store it into a variable
+        var originalStyle = element.getAttribute("style");
+        // execute a JS command that will create a yellow border around the element
+        javascriptExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])",
+                element,
+                "style",
+                "border: 7px solid yellow; border-style: dashed;");
+        Thread.sleep(2000);
+        // using JS, set the style of the element back to the original
+        javascriptExecutor.executeScript("arguments[0].setAttribute(arguments[1], arguments[2])",
+                element,
+                "style",
+                originalStyle);
+    }
 }
