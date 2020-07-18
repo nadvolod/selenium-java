@@ -29,7 +29,7 @@ public class PageLoadTest {
     }
 
     private WebDriver getDriver() {
-        //Using WebDriverManager package, we are able to not worry about
+        //Using WebDriverManager package, we dopn't have to not worry about
         //where the ChromeDriver comes from and if it's the latest
         return new ChromeDriver();
     }
