@@ -29,7 +29,11 @@ public class PageLoadTest {
     }
 
     private WebDriver getDriver() {
+<<<<<<< HEAD
         //Using WebDriverManager package, we are able to not worry about
+=======
+        //Using WebDriverManager package, we dopn't have to not worry about
+>>>>>>> 6ae18a2eefa234b185ef64cf3b105766315609ab
         //where the ChromeDriver comes from and if it's the latest
         return new ChromeDriver();
     }

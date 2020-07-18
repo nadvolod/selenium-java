@@ -1,7 +1,9 @@
 package atda;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +12,11 @@ import static org.junit.Assert.assertTrue;
 
 public class AcceptanceTestDrivenAutomationTest {
     WebDriver driver;
+    //This method will run once before all of the tests in our class
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
     @Before
     public void setup()
     {
@@ -40,11 +47,8 @@ public class AcceptanceTestDrivenAutomationTest {
     }
 
     private WebDriver getDriver() {
-        //Telling the system where to find chromedriver on mac
-        //System.setProperty("webdriver.chrome.driver", "resources/mac/chromedriver");
-
-        //The path of chromedriver for windows
-        System.setProperty("webdriver.chrome.driver", "resources/windows/chromedriver.exe");
+        //Using WebDriverManager package, we dopn't have to not worry about
+        //where the ChromeDriver comes from and if it's the latest
         return new ChromeDriver();
     }
 }

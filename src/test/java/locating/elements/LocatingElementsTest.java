@@ -1,5 +1,7 @@
 package locating.elements;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,12 +13,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.junit.Assert.assertTrue;
 
 public class LocatingElementsTest {
-    
+    @BeforeClass
+    public static void setupClass() {
+        WebDriverManager.chromedriver().setup();
+    }
+
     @Test
     public void elementsQuiz1()
     {
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         //1. Instantiate the driver
         WebDriver driver = new ChromeDriver();
         //2. navigate to the URL
@@ -33,8 +37,6 @@ public class LocatingElementsTest {
     @Test
     public void typesOfLocators()
     {
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         //1. Instantiate the driver
         WebDriver driver = new ChromeDriver();
         //2. navigate to the URL
@@ -57,9 +59,6 @@ public class LocatingElementsTest {
         driver.findElement(By.xpath("//*[@id=\"user-name\"]"));
         driver.quit();
 
-
-        //Telling the system where to find chromedriver. On Windows you also need to add .exe
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
         //1. Instantiate the driver
         driver = new ChromeDriver();
         //2. navigate to the URL
