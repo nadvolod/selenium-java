@@ -26,6 +26,9 @@ public class WebDriverMethods {
     * It's extremely hard to keep up with the versions.
     * In .NET, getting lost in executable versions is referred to as DLL Hell
     * (However, I had to break this rule for this course so that you see the whole process)
+    *
+    *
+    * Or, you can just use WebDriverManager maven package :)
     * */
     WebDriver driver;
     WebElement element;
