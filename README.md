@@ -15,3 +15,10 @@ This is the sample repository that we use in the [Complete Selenium WebDriver wi
 👍 Using ATDA—a secret automation technique to create top-quality tests
 
 🦸‍♀️️Creating a test automation framework in less than 45 minutes
+
+## Some Topics You Will Master
+
+### How to achieve parallelization with JUnit and TestNg
+
+[![Parallel Test Execution with JUnit and TestNg](http://img.youtube.com/vi/ufccoaURMIc/0.jpg)](https://youtu.be/ufccoaURMIc "Parallel Test Execution with JUnit and TestNg")
+
