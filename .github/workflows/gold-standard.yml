@@ -20,6 +20,10 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
       - name: Build application
         run: echo "Building our application"
       - name: Run unit tests
@@ -31,3 +35,10 @@ jobs:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         run: mvn -Dtest=*FeatureTest test
+      - name: Run front-end performance
+        env:
+          SAUCE_USERNAME: secrets.SAUCE_USERNAME
+          SAUCE_ACCESS_KEY: secrets.SAUCE_ACCESS_KEY
+        run: |
+          npm install speedo -g
+          speedo run www.saucedemo.com?utm_source=automated-testing
