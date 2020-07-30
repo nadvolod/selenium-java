@@ -22,3 +22,6 @@ This is the sample repository that we use in the [Complete Selenium WebDriver wi
 
 [![Parallel Test Execution with JUnit and TestNg](http://img.youtube.com/vi/ufccoaURMIc/0.jpg)](https://youtu.be/ufccoaURMIc "Parallel Test Execution with JUnit and TestNg")
 
+```
+FIRST 15 PEOPLE GET 15% DISCOUNT! USE COUPON CODE github-15 AT CHECKOUT
+```
