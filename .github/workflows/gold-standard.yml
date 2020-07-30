@@ -24,3 +24,5 @@ jobs:
         run: mvn -Dtest=UnitTests test
       - name: Run integration tests
         run: mvn -Dtest=*IntegrationTests test
+      - name: Run acceptance tests
+        run: mvn -Dtest=*FeatureTest test
