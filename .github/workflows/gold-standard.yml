@@ -20,6 +20,8 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Build application
+        run: echo "Building our application"
       - name: Run unit tests
         run: mvn -Dtest=UnitTests test
       - name: Run integration tests
