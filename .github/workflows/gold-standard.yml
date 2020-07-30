@@ -35,6 +35,7 @@ jobs:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         run: mvn -Dtest=*FeatureTest test
+      # https://wiki.saucelabs.com/display/DOCS/Test+Performance+Using+Speedo
       - name: Run front-end performance
         env:
           SAUCE_USERNAME: secrets.SAUCE_USERNAME
