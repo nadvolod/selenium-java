@@ -26,6 +26,6 @@ jobs:
         run: mvn -Dtest=*IntegrationTests test
       - name: Run acceptance tests
         env:
-          SAUCE_USERNAME: secrets.SAUCE_USERNAME
-          SAUCE_ACCESS_KEY: secrets.SAUCE_ACCESS_KEY
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
         run: mvn -Dtest=*FeatureTest test
