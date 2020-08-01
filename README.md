@@ -20,6 +20,7 @@ This is the sample repository that we use in the [Complete Selenium WebDriver wi
 
 ### How to achieve parallelization with JUnit and TestNg
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/95a6a0b3fe3f418fb7ff035fac5d2f87)](https://app.codacy.com/manual/nadvolod/selenium-java?utm_source=github.com&utm_medium=referral&utm_content=nadvolod/selenium-java&utm_campaign=Badge_Grade_Dashboard)
 [![Parallel Test Execution with JUnit and TestNg](http://img.youtube.com/vi/ufccoaURMIc/0.jpg)](https://youtu.be/ufccoaURMIc "Parallel Test Execution with JUnit and TestNg")
 
 ```
