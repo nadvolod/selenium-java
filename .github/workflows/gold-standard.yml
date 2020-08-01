@@ -42,4 +42,4 @@ jobs:
           SAUCE_ACCESS_KEY: secrets.SAUCE_ACCESS_KEY
         run: |
           npm install speedo -g
-          speedo run https://www.saucedemo.com?utm_source=automated-testing
+          speedo run https://www.saucedemo.com/
