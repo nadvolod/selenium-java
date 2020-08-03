@@ -8,8 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(Parameterized.class)
-public class AcceptanceTestDrivenAutomationTest extends BaseTest {
-
+public class RandomFeatureTest extends BaseTest {
     @Test
     public void shouldLogin() {
         LoginPage loginPage = new LoginPage(driver);
@@ -25,13 +24,5 @@ public class AcceptanceTestDrivenAutomationTest extends BaseTest {
         productsPage.open();
         productsPage.addItemToCart();
         assertEquals("1", productsPage.getCountOfItemsInCart());
-    }
-    @Test
-    public void shouldAddTwoItemsToCart() {
-        ProductsPage productsPage = new ProductsPage(driver);
-        productsPage.open();
-        productsPage.addItemToCart();
-        productsPage.addItemToCart();
-        assertEquals("2", productsPage.getCountOfItemsInCart());
     }
 }

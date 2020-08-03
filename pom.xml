@@ -19,6 +19,15 @@
                         <target>11</target>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M4</version>
+                    <configuration>
+                        <parallel>all</parallel>
+                        <threadCount>100</threadCount>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
