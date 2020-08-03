@@ -1,0 +1,45 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Gold standard pipeline
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Build application
+        run: echo "Building our application"
+      - name: Run unit tests
+        run: mvn -Dtest=UnitTests test
+      - name: Run integration tests
+        run: mvn -Dtest=*IntegrationTests test
+      - name: Run acceptance tests
+        env:
+          SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ secrets.SAUCE_ACCESS_KEY }}
+        run: mvn -Dtest=*FeatureTest test
+      # https://wiki.saucelabs.com/display/DOCS/Test+Performance+Using+Speedo
+      - name: Run front-end performance
+        env:
+          SAUCE_USERNAME: secrets.SAUCE_USERNAME
+          SAUCE_ACCESS_KEY: secrets.SAUCE_ACCESS_KEY
+        run: |
+          npm install -g speedo
+          speedo run https://www.saucedemo.com/

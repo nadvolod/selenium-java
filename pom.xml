@@ -20,15 +20,24 @@
                         <target>11</target>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M4</version>
+                    <configuration>
+                        <parallel>all</parallel>
+                        <threadCount>10</threadCount>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
+
     </build>
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -36,17 +45,10 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://github.com/bonigarcia/webdrivermanager/ -->
         <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>4.0.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.10</version>
+            <groupId>com.saucelabs</groupId>
+            <artifactId>sauce_bindings</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </project>
