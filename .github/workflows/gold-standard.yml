@@ -41,5 +41,6 @@ jobs:
           SAUCE_USERNAME: secrets.SAUCE_USERNAME
           SAUCE_ACCESS_KEY: secrets.SAUCE_ACCESS_KEY
         run: |
+          npm ci
           npm install speedo -g
           speedo run https://www.saucedemo.com/
