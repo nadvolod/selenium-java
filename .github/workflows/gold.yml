@@ -22,3 +22,5 @@ jobs:
           java-version: 11
       - name: Run unit tests
         run: mvn -Dtest=UnitTests test
+      - name: Run integration tests
+        run: mvn -Dtest=IntegrationTests test
