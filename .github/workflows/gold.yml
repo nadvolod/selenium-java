@@ -5,9 +5,9 @@ name: Gold pipeline
 
 on:
   push:
-    branches: [ master ]
+    branches: [ ci3 ]
   pull_request:
-    branches: [ master ]
+    branches: [ ci3 ]
 
 jobs:
   build:
