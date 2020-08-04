@@ -1,4 +1,4 @@
-package atda;
+package com.acceptance;
 
 import org.junit.Before;
 import org.junit.Rule;

@@ -1,4 +1,4 @@
-package atda;
+package com.acceptance;
 
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;

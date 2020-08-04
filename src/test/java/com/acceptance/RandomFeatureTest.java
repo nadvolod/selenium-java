@@ -1,4 +1,4 @@
-package atda;
+package com.acceptance;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
