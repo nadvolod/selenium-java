@@ -1,6 +1,7 @@
 package com.acceptance;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.junit.runners.Parameterized;
@@ -13,8 +14,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BaseTest {
+    private static String build;
     public WebDriver driver;
 
     @Rule
@@ -27,7 +31,12 @@ public class BaseTest {
         }
     };
 
-    @Parameterized.Parameters
+    @BeforeClass
+    public static void beforeClass() {
+        build = setBuildName();
+    }
+
+    @Parameterized.Parameters(name = "{0},{1}")
     public static Collection<Object[]> crossBrowserData() {
         return Arrays.asList(new Object[][] {
                 { "Chrome", "macOS 10.14", "latest" },
@@ -105,7 +114,7 @@ public class BaseTest {
         sauceOpts.setCapability("username", sauceUsername);
         sauceOpts.setCapability("accessKey", sauceAccessKey);
         sauceOpts.setCapability("name", testName.getMethodName());
-        sauceOpts.setCapability("build", "ATDA");
+        sauceOpts.setCapability("build", build);
         sauceOpts.setCapability("commandTimeout", "30");
 
 
@@ -118,5 +127,39 @@ public class BaseTest {
         String sauceUrl = "https://ondemand.saucelabs.com/wd/hub";
         URL url = new URL(sauceUrl);
         driver = new RemoteWebDriver(url, browserOptions);
+    }
+
+    public static final Map<String, String> knownCITools;
+
+    static {
+        knownCITools = new HashMap<>();
+        knownCITools.put("Jenkins", "BUILD_TAG");
+        knownCITools.put("Bamboo", "bamboo_agentId");
+        knownCITools.put("Travis", "TRAVIS_JOB_ID");
+        knownCITools.put("Circle", "CIRCLE_JOB");
+        knownCITools.put("GitLab", "CI");
+        knownCITools.put("TeamCity", "TEAMCITY_PROJECT_NAME");
+    }
+
+    private static String setBuildName() {
+        if (getEnvironmentVariable(knownCITools.get("Jenkins")) != null) {
+            return getEnvironmentVariable("BUILD_NAME") + ": " + getEnvironmentVariable("BUILD_NUMBER");
+        } else if (getEnvironmentVariable(knownCITools.get("Bamboo")) != null) {
+            return getEnvironmentVariable("bamboo_shortJobName") + ": " + getEnvironmentVariable("bamboo_buildNumber");
+        } else if (getEnvironmentVariable(knownCITools.get("Travis")) != null) {
+            return getEnvironmentVariable("TRAVIS_JOB_NAME") + ": " + getEnvironmentVariable("TRAVIS_JOB_NUMBER");
+        } else if (getEnvironmentVariable(knownCITools.get("Circle")) != null) {
+            return getEnvironmentVariable("CIRCLE_JOB") + ": " + getEnvironmentVariable("CIRCLE_BUILD_NUM");
+        } else if (getEnvironmentVariable(knownCITools.get("GitLab")) != null) {
+            return getEnvironmentVariable("CI_JOB_NAME") + ": " + getEnvironmentVariable("CI_JOB_ID");
+        } else if (getEnvironmentVariable(knownCITools.get("TeamCity")) != null) {
+            return getEnvironmentVariable("TEAMCITY_PROJECT_NAME") + ": " + getEnvironmentVariable("BUILD_NUMBER");
+        } else {
+            return "Build Time: " + System.currentTimeMillis();
+        }
+    }
+
+    protected static String getEnvironmentVariable(String key) {
+        return System.getenv(key);
     }
 }
