@@ -44,10 +44,12 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://github.com/bonigarcia/webdrivermanager/ -->
         <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.10</version>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>4.0.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
