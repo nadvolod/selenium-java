@@ -28,7 +28,7 @@ public class BaseTest {
     }
 
     @Before
-    public void setup() throws MalformedURLException {
+    public void setup() {
         createDriver();
     }
     private void createDriver() {
