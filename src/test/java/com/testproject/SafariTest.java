@@ -1,21 +1,21 @@
 package com.testproject;
 
-import io.testproject.sdk.drivers.web.ChromeDriver;
+import io.testproject.sdk.drivers.web.SafariDriver;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.safari.SafariOptions;
 
-public class SimpleTest {
+public class SafariTest {
 
     private WebDriver driver;
 
     @Before
     public void setUp() throws Exception {
-        driver = new ChromeDriver(new ChromeOptions());
+        driver = new SafariDriver(new SafariOptions());
     }
 
     @After
