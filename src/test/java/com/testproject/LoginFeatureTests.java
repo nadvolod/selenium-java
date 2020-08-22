@@ -24,8 +24,13 @@ public class LoginFeatureTests {
     @Test
     public void shouldOpenPage() {
         driver.get("https://example.cypress.io/commands/actions");
-        driver.findElement(By.cssSelector(".action-email")).sendKeys("test@test.com");
-        Assert.assertTrue(true);
+        Assert.assertEquals("Cypress.io: Kitchen Sink", driver.getTitle());
     }
-
+    @Test
+    public void shouldTypeText() {
+        driver.get("https://example.cypress.io/commands/actions");
+        driver.findElement(By.cssSelector(".action-email")).sendKeys("test@test.com");
+        Assert.assertEquals("test@test.com",
+                driver.findElement(By.cssSelector(".action-email")).getAttribute("value"));
+    }
 }
