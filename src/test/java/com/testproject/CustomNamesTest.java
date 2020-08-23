@@ -1,24 +1,24 @@
 package com.testproject;
 
-import io.testproject.sdk.drivers.web.SafariDriver;
-import org.junit.After;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import io.testproject.sdk.drivers.web.ChromeDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.safari.SafariOptions;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class CustomNamesTest {
 
     private WebDriver driver;
 
-    @Before
+    @BeforeTest
     public void setUp() throws Exception {
-        driver = new SafariDriver(new SafariOptions(), "Sample Project", "New Job");
+        driver = new ChromeDriver(new ChromeOptions());
     }
 
-    @After
+    @AfterTest
     public void tearDown() {
         driver.quit();
     }
