@@ -2,9 +2,9 @@ name: 20 Minute Pipeline
 
 on:
   push:
-    branches: [ master ]
+    branches: [ fast_ci_poc ]
   pull_request:
-    branches: [ master ]
+    branches: [ fast_ci_poc ]
 
 jobs:
   build:
