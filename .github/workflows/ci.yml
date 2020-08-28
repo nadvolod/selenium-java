@@ -2,9 +2,9 @@ name: 20 Minute Pipeline
 
 on:
   push:
-    branches: [ fast_ci_poc ]
+    branches: [ master ]
   pull_request:
-    branches: [ fast_ci_poc ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -17,5 +17,7 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Test with Maven
+      - name: Run unit tests
+        run: mvn -Dtest=UnitTests test
+      - name: Run integration tests
         run: mvn -Dtest=UnitTests test
