@@ -25,3 +25,5 @@ jobs:
           java-version: 11
       - name: Run unit tests
         run: mvn -Dtest=UnitTests test
+      - name: Run acceptance tests
+        run: mvn -Dtest=*FeatureTests test
