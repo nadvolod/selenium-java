@@ -1,3 +1,5 @@
+package com.saucedemo;
+
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,13 +14,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelloSelenium2Test {
     @Test
-    public void simpleTest()
+    public void deprecatedTest()
     {
         WebDriver driver = new SafariDriver();
         //Deprecated in 4.x
         WebDriverWait wait = new WebDriverWait(driver, 10);
 
         driver.get("https://www.saucedemo.com/");
+
         //Removed in 4.x
         WebElement button = ((FindsByName)driver).findElementByName("LOGIN");
         button.click();
