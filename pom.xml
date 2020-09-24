@@ -36,6 +36,11 @@
             <version>4.13</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.saucelabs</groupId>
+            <artifactId>sauce_bindings</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <!-- https://github.com/bonigarcia/webdrivermanager/ -->
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
