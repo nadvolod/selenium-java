@@ -12,14 +12,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 * https://www.youtube.com/watch?time_continue=14&v=c163xQXiiEM&feature=emb_logo
 * */
 
-public class HelloSelenium2Test {
+public class Selenium3Tests {
     @Test
     public void deprecatedTest()
     {
         WebDriver driver = new SafariDriver();
         //Deprecated in 4.x
         WebDriverWait wait = new WebDriverWait(driver, 10);
-
         driver.get("https://www.saucedemo.com/");
 
         //Removed in 4.x
