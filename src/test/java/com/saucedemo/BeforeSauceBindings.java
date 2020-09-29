@@ -3,9 +3,9 @@ package com.saucedemo;
 import org.junit.After;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
@@ -28,7 +28,7 @@ public class BeforeSauceBindings {
         String sauceAccessKey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceURL = "https://ondemand.saucelabs.com/wd/hub";
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        MutableCapabilities capabilities = new MutableCapabilities();
         capabilities.setCapability("username", sauceUserName);
         capabilities.setCapability("accessKey", sauceAccessKey);
         capabilities.setCapability("browserName", "Chrome");
