@@ -3,12 +3,9 @@ package com.atda;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ProductsPage {
-
-    private WebDriver driver;
-
+public class ProductsPage extends BasePage{
     public ProductsPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public void open() {
@@ -18,5 +15,9 @@ public class ProductsPage {
     public boolean isLoaded() {
         return driver.findElement(By.id("inventory_filter_container")).
                 isDisplayed();
+    }
+
+    public void addItemToCart() {
+        driver.findElement(By.className("btn_inventory")).click();
     }
 }
