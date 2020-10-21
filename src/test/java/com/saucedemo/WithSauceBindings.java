@@ -1,5 +1,6 @@
 package com.saucedemo;
 
+import com.saucelabs.saucebindings.Browser;
 import com.saucelabs.saucebindings.SauceOptions;
 import com.saucelabs.saucebindings.SauceSession;
 import org.junit.After;
@@ -23,12 +24,9 @@ public class WithSauceBindings {
 
     @Test
     public void findButton() {
-        SauceOptions options = new SauceOptions();
-        options.setBuild("Selenium4");
-        options.setName("findButton");
-
-        session = new SauceSession(options);
-        driver = session.start();
+        var options = new SauceOptions();
+        options.setBrowserName(Browser.EDGE);
+        driver = new SauceSession(options).start();
 
         driver.get("https://www.saucedemo.com/");
         WebElement button = driver.findElement(By.id("login-button"));

@@ -1,10 +1,13 @@
 package com.saucedemo;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -21,6 +24,11 @@ public class Selenium4Tests {
 
     private WebDriver driver;
 
+    @Before
+    public void setUp() {
+       WebDriverManager.edgedriver().setup();
+    }
+
     @After
     public void tearDown() {
         if(driver != null){
@@ -31,7 +39,8 @@ public class Selenium4Tests {
     @Test
     public void deprecatedTest()
     {
-        driver = new SafariDriver();
+
+        driver = new EdgeDriver();
         //Deprecated in 4.x
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -55,7 +64,7 @@ public class Selenium4Tests {
         * https://github.com/SeleniumHQ/selenium/issues/8368
         * */
         WebElement password = driver.findElement(By.id("password"));
-        WebElement button =driver.findElement(withTagName("input").below(password));
+        WebElement button = driver.findElement(withTagName("input").above(password));
         button.click();
     }
 }
