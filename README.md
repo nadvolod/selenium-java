@@ -25,7 +25,13 @@ This is the sample repository that we use in the [Complete Selenium WebDriver wi
 
 ### How to use the Page Object Model design pattern effectively
 
+[![Page Object Model](https://ultimateqa.com/wp-content/uploads/2018/08/Copy-of-Copy-of-3-Automated-Testing-Tools-Simplifying-Selenium-and-Appium-1.png)](1https://ultimateqa.com/automation-patterns-antipatterns/")
+
 ### Continuous integration with SauceLabs and GitHub
+
+### Cross Browseer and Cross Platform Automation using SauceLabs
+
+### How to get awesome reports using the TestProject SDK
 
 ```
 FIRST 15 PEOPLE GET 15% DISCOUNT! USE COUPON CODE github-15 AT CHECKOUT
