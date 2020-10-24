@@ -29,7 +29,7 @@ This is the sample repository that we use in the [Complete Selenium WebDriver wi
 
 ### Continuous integration with SauceLabs and GitHub
 
-### Cross Browseer and Cross Platform Automation using SauceLabs
+### Cross Browser and Cross Platform Automation using SauceLabs
 
 ### How to get awesome reports using the TestProject SDK
 
