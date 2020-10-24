@@ -31,7 +31,11 @@ This is the sample repository that we use in the [Complete Selenium WebDriver wi
 
 ### Cross Browser and Cross Platform Automation using SauceLabs
 
+![](https://i.ytimg.com/vi/5nDF4Ng60z0/hqdefault.jpg)
+
 ### How to get awesome reports using the TestProject SDK
+
+![TestProject Reports](https://ultimateqa.com/wp-content/uploads/2018/09/analytics.png)
 
 ```
 FIRST 15 PEOPLE GET 15% DISCOUNT! USE COUPON CODE github-15 AT CHECKOUT
