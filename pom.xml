@@ -19,6 +19,7 @@
                             <configurationParameters>
                                 junit.jupiter.execution.parallel.enabled = true
                                 junit.jupiter.execution.parallel.mode.default = concurrent
+                                junit.jupiter.execution.parallel.config.fixed.parallelism=1
                             </configurationParameters>
                         </properties>
                     </configuration>

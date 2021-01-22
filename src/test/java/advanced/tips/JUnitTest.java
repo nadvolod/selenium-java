@@ -3,30 +3,20 @@ package advanced.tips;
 import atda.LoginPage;
 import atda.ProductsPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class JUnitTest {
     WebDriver driver;
-    static List<Long> threads = new ArrayList<Long>();
     @BeforeAll
     public static void setupClass() {
         WebDriverManager.chromedriver().setup();
-    }
-
-    @AfterAll
-    public static void afterClass() throws Exception {
-        System.out.println("ALL THREADS ||||||||||||||||||||||||||||||||");
-        for(Long thread : threads) {
-            System.out.println(thread);
-        }
-        System.out.println("||||||||||||||||||||||||||||||||");
     }
 
     @BeforeEach
@@ -47,11 +37,7 @@ public class JUnitTest {
     }
 
     public void runTest() {
-        var threadId = Thread.currentThread().getId();
-        threads.add(threadId);
-        System.out.println("||||||||||||||||||||||||||||||||");
-        System.out.println("Thread id:" + Thread.currentThread().getId());
-        System.out.println("||||||||||||||||||||||||||||||||");
+        System.out.println(Thread.currentThread().getName());
         LoginPage loginPage = new LoginPage(driver);
         loginPage.open();
 
