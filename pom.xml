@@ -19,10 +19,18 @@
                             <configurationParameters>
                                 junit.jupiter.execution.parallel.enabled = true
                                 junit.jupiter.execution.parallel.mode.default = concurrent
-                                junit.jupiter.execution.parallel.config.fixed.parallelism=1
                             </configurationParameters>
                         </properties>
                     </configuration>
+<!--                    <configuration>-->
+<!--                        <properties>-->
+<!--                            <configurationParameters>-->
+<!--                                junit.jupiter.execution.parallel.enabled = true-->
+<!--                                junit.jupiter.execution.parallel.mode.default = same_thread-->
+<!--                                junit.jupiter.execution.parallel.mode.classes.default = concurrent-->
+<!--                            </configurationParameters>-->
+<!--                        </properties>-->
+<!--                    </configuration>-->
                 </plugin>
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
                 <plugin>

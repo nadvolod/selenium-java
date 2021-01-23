@@ -24,4 +24,18 @@ public class AdvancedParallelizationTest {
         System.out.println(Thread.currentThread().getName()+
                 "=>" + new Throwable().getStackTrace()[0].getMethodName());
     }
+    @Test
+    public void test1d()
+    {
+        //Get the thread name and dynamically fetch method name
+        System.out.println(Thread.currentThread().getName()+
+                "=>" + new Throwable().getStackTrace()[0].getMethodName());
+    }
+    @Test
+    public void test1e()
+    {
+        //Get the thread name and dynamically fetch method name
+        System.out.println(Thread.currentThread().getName()+
+                "=>" + new Throwable().getStackTrace()[0].getMethodName());
+    }
 }
