@@ -1,6 +1,7 @@
 package csvDataDriven;
 
 import au.com.bytecode.opencsv.CSVReader;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -45,10 +46,14 @@ public class CSVDataReader {
         return dataFromCSV;
     }
 
+    private WebDriver getDriver() {
+        return new ChromeDriver();
+    }
+
     @BeforeEach
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "resources/windows/chromedriver.exe");
-        driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = getDriver();
         driver.get("https://www.saucedemo.com/");
     }
 
