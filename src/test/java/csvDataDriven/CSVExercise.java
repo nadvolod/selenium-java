@@ -61,6 +61,8 @@ public class CSVExercise {
     @MethodSource("readCsvFile")
     @ParameterizedTest
     public void loginTest(String itemName, String price) {
+        // The xPath for the element is a bit complex. Basically what we are looking for is the div that contains the product price
+        // and has the same ancestor as the div that contains the itemName (so we know we are checking the price for our specific product)
         String xPath = String.format
                 ("//div[contains(text(),'%s')]/ancestor::div[@class='inventory_item_description']//div[@class='inventory_item_price']",
                         itemName);
