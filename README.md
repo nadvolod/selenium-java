@@ -32,6 +32,6 @@ This is the sample repository that we use in the [Complete Selenium WebDriver wi
 ### How to get awesome reports using the TestProject SDK
 
 ```
-FIRST 15 PEOPLE GET 15% DISCOUNT! USE COUPON CODE github-15 AT CHECKOUT
+FIRST 150 PEOPLE GET 15% DISCOUNT! USE COUPON CODE github-15 AT CHECKOUT
 ```
 [Complete Selenium WebDriver with Java Bootcamp](https://ultimateqa.com/selenium-webdriver-java-course/)
