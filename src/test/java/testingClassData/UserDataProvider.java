@@ -1,5 +1,7 @@
 package testingClassData;
 
+// This class provides the data for our tests
+// It returns 3 different objects, with 2 String attributes (in our case, the 2 attributes are the username and the password)
 public class UserDataProvider {
     public static Object[] provideUserData() {
         return new Object[] {

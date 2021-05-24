@@ -12,6 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+// We need to add an annotation to the class to instruct it that the tests will run using parameters
 @RunWith(JUnitParamsRunner.class)
 public class UserLoginTests {
 
@@ -33,6 +34,7 @@ public class UserLoginTests {
         driver.quit();
     }
 
+    // In our test, we simply need to pass the data provider class to let the test know where the parameters come from:
     @Test
     @Parameters(source = UserDataProvider.class)
     public void loginTest(String userName, String password) {

@@ -29,6 +29,8 @@ public class EnumDataDrivenTests {
         driver.quit();
     }
 
+    // Using the @ParameterizedTest annotation, we let our test know it will run multiple times with different parameters
+    // The @EnumSource lets the test know that the sourse is the Enum class provided as a parameter
     @ParameterizedTest
     @EnumSource(User.class)
     public void loginTest(User user) {
