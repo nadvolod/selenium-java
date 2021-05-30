@@ -9,9 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import testingClassData.ProductDataProvider;
 
 public class TestNGDataDrivenExercise {
 
@@ -35,6 +33,8 @@ public class TestNGDataDrivenExercise {
         driver.quit();
     }
 
+    // The test method is the same as in the previous examples,
+    // except with TestNG we pass the data provider method like this:
     @Test (dataProvider = "provideProductData")
     public void priceCheckTest(String itemName, String price) {
         // The xPath for the element is a bit complex. Basically what we are looking for is the div that contains the product price
@@ -47,6 +47,8 @@ public class TestNGDataDrivenExercise {
         Assert.assertEquals(priceElement.getText(), price);
     }
 
+    // This time the objects returned have 2 values:
+    // One for the product name, and one for the price
     @org.testng.annotations.DataProvider(name = "provideProductData")
     public static Object[][] provideProductData() {
         return new Object[][]{
