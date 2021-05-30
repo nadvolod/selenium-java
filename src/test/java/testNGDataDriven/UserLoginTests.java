@@ -16,6 +16,7 @@ public class UserLoginTests {
         return new ChromeDriver();
     }
 
+    // Pay extra attention to the annotations, which are a bit different than the JUnit ones
     @BeforeMethod
     public void setup() {
         WebDriverManager.chromedriver().setup();
@@ -28,6 +29,9 @@ public class UserLoginTests {
         driver.quit();
     }
 
+    // The test is the same as before
+    // We pass 2 string parameters for username and password
+    // which are returned by the data provider method
     @Test (dataProvider = "DataProvider")
     public void loginTest(String userName, String password) {
         driver.findElement(By.id("user-name")).sendKeys(userName);
@@ -36,6 +40,8 @@ public class UserLoginTests {
         Assert.assertTrue(driver.findElement(By.className("title")).isDisplayed());
     }
 
+    // This is the data provider method, which returns user objects
+    // with 2 string values: username and password
     @org.testng.annotations.DataProvider(name = "DataProvider")
     public Object[][] provideUserData() {
         return new Object[][] {
