@@ -22,6 +22,8 @@ public class WebDriverMethodsQuiz {
     * 1. Download the latest Chrome driver: https://chromedriver.chromium.org/
     * 2. Make sure that your Chrome version is supported by your ChromeDriver download
     *
+    * OR, you can use WebDriverManager maven package
+    * 
     * Side Note:
     * This is why it's not a good idea to upload executables to source control in programming.
     * It's extremely hard to keep up with the versions.
