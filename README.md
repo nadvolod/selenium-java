@@ -3,6 +3,21 @@
 # selenium-java
 This is the sample repository that we use in the [Complete Selenium WebDriver with Java Bootcamp](https://ultimateqa.com/selenium-webdriver-java-course/)
 
+The Java Software Engineer in Test (SDET) curriculum is your ticket to a wonderful test automation career.
+🌎 5 months of world-class training
+
+💻 Gain real-world experience through automation with real customers
+
+🚀 Build out your open source coding skills through group projects
+
+💼 Interview training, on-the-job guidance, and live support to ensure your success in your new role.
+
+📅 100% virtual education
+
+Join the ranks of the world's elite software developers and test automation experts 🌟
+
+👉 Join now, be the first to know about the launch and enjoy exclusive benefits: https://ultimateqa.ck.page/academy-coming-soon
+
 # The Bootcamp that Will Make You Expert in
 
 💪 Mastering automation testing from A to Z—be the go-to person to improve software quality
